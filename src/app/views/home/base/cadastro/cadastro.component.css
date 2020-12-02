@@ -1,0 +1,23 @@
+.example-form {
+
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+.labelCadastro{
+  color: black;
+  font-size:1.0003rem;
+}
+
+.inputCadastro{
+  background-color: #323030;
+}
+
+

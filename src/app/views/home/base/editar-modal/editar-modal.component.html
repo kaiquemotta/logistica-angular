@@ -1,0 +1,38 @@
+<h2>Editar Base</h2>
+<!--<p>Valor do retorno da API: {{ dataForView }}</p> -->
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="id">ID:</label><br>
+    <input disabled type="number" formControlName="id">
+  </div>
+  <div class="form-group">
+    <label for="codBase">Codigo Base:</label>
+    <input type="number" formControlName="codBase">
+  </div>
+  <div class="form-group">
+    <label for="nomeBase">Nome na Base:</label>
+    <input type="text" formControlName="nomeBase">
+  </div>
+  <div class="form-group">
+    <label for="cep">CEP:</label><br>
+    <input (keyup)="verifyCep()" type="text" maxlength="8" formControlName="cep">
+  </div>
+  <div class="form-group">
+    <label for="uf">Estado:</label>
+    <input disabled type="text" formControlName="uf">
+  </div>
+  <div class="form-group">
+    <label for="cidade">Cidade:</label>
+    <input disabled type="text" formControlName="cidade">
+  </div>
+  <div class="form-group">
+    <label for="latitude">Latitude:</label>
+    <input disabled type="text" formControlName="latitude">
+  </div>
+  <div class="form-group">
+    <label for="longitude">Longitude:</label>
+    <input disabled type="text" formControlName="longitude">
+  </div>
+
+  <button mat-raised-button style="margin-top: 1rem;"(click)=submitForm()>Salvar Edicao</button>
+</form>

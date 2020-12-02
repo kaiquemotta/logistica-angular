@@ -1,0 +1,56 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>-->
+  </label>
+</mat-form-field>
+<!--  displayedColumns: any[] = ['id', 'alteradoPor', 'criandoEm', 'alteradoEm', 'tempoEntrega', 'status', 'actions'];
+-->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="backgroundTable">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.id}} </td>
+    </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="alteradoPor">
+      <th mat-header-cell *matHeaderCellDef> Nome Motorista</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.alteradoPor}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="criandoEm">
+      <th mat-header-cell *matHeaderCellDef> Hora cadastro</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.criandoEm}} </td>
+    </ng-container>
+    <ng-container matColumnDef="alteradoEm">
+      <th mat-header-cell *matHeaderCellDef> Hora Entrega</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.alteradoEm}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tempoEntrega">
+      <th mat-header-cell *matHeaderCellDef> Tempo entrega</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.tempoEntrega}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="statusTarefa">
+      <th mat-header-cell *matHeaderCellDef> Status</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.statusTarefa}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+      <td mat-cell *matCellDef="let morotirsta">
+        <i class="material-icons click tamIcon" (click)="openDialog(morotirsta.id)">
+          info
+        </i>
+
+      </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="base">
+      <th mat-header-cell *matHeaderCellDef> Base </th>
+      <td mat-cell *matCellDef="let element"> {{element.base}} </td>
+    </ng-container> -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

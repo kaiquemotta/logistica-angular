@@ -1,0 +1,39 @@
+<mat-tab-group mat-align-tabs="start" class="teste" style="padding-top: 40px;padding-left: 2%; padding-right: 2%;" animationDuration="1500ms">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">assignment</mat-icon>
+      Atribuir Tarefa
+    </ng-template>
+    <app-atribuir-tarefa></app-atribuir-tarefa>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div (click)="getTrefasAbertas()">
+      <mat-icon class="example-tab-icon">assignment_late </mat-icon>
+        Tarefas Abertas
+      </div>
+    </ng-template>
+    <app-tarefa-list *ngIf="newData" [dataSource]="dataSource" [newData]="newData"></app-tarefa-list>
+  </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div (click)="getTarefasAlocadas()" >
+          <mat-icon class="example-tab-icon">assignment_return
+          </mat-icon>
+          Tarefas Alocadas
+        </div>
+      </ng-template>
+      <app-tarefa-list *ngIf="newData" [dataSource]="dataSource" [newData]="newData"></app-tarefa-list>
+    </mat-tab>
+  <mat-tab>
+  <ng-template mat-tab-label>
+      <div (click)="getTarefasFechadas()" >
+      <mat-icon class="example-tab-icon">assignment_turned_in
+      </mat-icon>
+      Tarefas Concluida
+      </div>
+    </ng-template>
+    <app-tarefa-list *ngIf="newData" [dataSource]="dataSource" [newData]="newData"></app-tarefa-list>
+  </mat-tab>
+
+</mat-tab-group>

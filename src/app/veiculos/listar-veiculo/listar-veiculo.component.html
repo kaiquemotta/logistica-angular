@@ -1,0 +1,57 @@
+ <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </label>
+</mat-form-field>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource"  matSort class="backgroundTable">
+      <ng-container matColumnDef="idVeiculo">
+        <th mat-header-cell *matHeaderCellDef > ID</th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.idVeiculo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="cidade">
+        <th mat-header-cell *matHeaderCellDef > Cidade </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.cidade}} </td>
+      </ng-container>
+      <ng-container matColumnDef="placa">
+        <th mat-header-cell *matHeaderCellDef > Placa </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.placa}} </td>
+      </ng-container>
+      <ng-container matColumnDef="uf" class="ufStyle">
+        <th mat-header-cell *matHeaderCellDef > UF </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.uf}} </td>
+      </ng-container>
+      <ng-container matColumnDef="corVeiculo">
+        <th mat-header-cell *matHeaderCellDef > Cor do Veículo </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.corVeiculo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tipoVeiculo">
+        <th mat-header-cell *matHeaderCellDef > Tipo de Veículo </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.tipoVeiculo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="statusVeiculo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+        <td mat-cell *matCellDef="let veiculo"> {{veiculo.statusVeiculo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+        <td mat-cell *matCellDef="let veiculo">
+          <i class="material-icons click tamIcon" (click)="openDialog(veiculo.idVeiculo)">
+            edit
+          </i>
+          <i class="material-icons tamIcon"(click)="openDialongConfirm(veiculo.idVeiculo)">
+            delete
+          </i>
+          <i class="material-icons tamIcon">
+            commute
+          </i>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="footerTable">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

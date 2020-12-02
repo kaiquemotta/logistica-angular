@@ -1,0 +1,26 @@
+<mat-tab-group mat-align-tabs="start" class="teste" style="padding-top: 40px;padding-left: 2%; padding-right: 2%;">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <div (click)="getMotoristass()" >
+        <mat-icon class="example-tab-icon">list</mat-icon>
+        Motoristas Cadastrados
+      </div>
+    </ng-template>
+    <app-listar-motorista *ngIf="newData" [dataSource]="dataSource" [newData]="newData"></app-listar-motorista>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">home_work</mat-icon>
+      Cadastro de Motorista
+    </ng-template>
+    <app-cadastrar-motorista></app-cadastrar-motorista>
+  </mat-tab>
+
+<!--  <mat-tab>-->
+<!--    <ng-template mat-tab-label>-->
+<!--      <mat-icon class="example-tab-icon">commute</mat-icon>-->
+<!--      0Vincular Não SEI-->
+<!--    </ng-template>-->
+<!--  </mat-tab>-->
+</mat-tab-group>

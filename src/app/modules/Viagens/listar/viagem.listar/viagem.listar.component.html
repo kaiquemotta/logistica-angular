@@ -1,0 +1,87 @@
+<div>
+  <form class="example-form" [formGroup]="viagem">
+    <br><br>
+    <div formGroupName="motorista">
+      <mat-form-field appearance="outline">
+        <mat-label>Motorista</mat-label>
+        <!--salva o valor de value em ngModel-->
+        <mat-select [(value)]="selected" required formControlName="id">
+          <mat-option *ngFor="let motorista of motoristas" [value]="motorista.id">
+            {{motorista.nome}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Preencha o campo
+          bases
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div formGroupName="veiculo">
+      <!--<p>You selected: {{selected}}</p>-->
+      <mat-form-field appearance="outline">
+        <mat-label>Veiculos</mat-label>
+        <!--salva o valor de value em ngModel-->
+        <mat-select required  formControlName="idVeiculo">
+          <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo.idVeiculo">
+            {{veiculo.placa}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Preencha o campo
+          bases
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8">
+      <div>
+        <table style="height: 20px" mat-table [dataSource]="dataSource" matSort class="backgroundTable">
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.id}} </td>
+          </ng-container>
+          <!-- Position Column -->
+          <ng-container matColumnDef="alteradoPor">
+            <th mat-header-cell *matHeaderCellDef> Nome Motorista</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.alteradoPor}} </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="criandoEm">
+            <th mat-header-cell *matHeaderCellDef> Hora cadastro</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.criandoEm}} </td>
+          </ng-container>
+          <ng-container matColumnDef="alteradoEm">
+            <th mat-header-cell *matHeaderCellDef> Hora Entrega</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.alteradoEm}} </td>
+          </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="tempoEntrega">
+            <th mat-header-cell *matHeaderCellDef> Tempo entrega</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.tempoEntrega}} </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="statusTarefa">
+            <th mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let tarefa"> {{tarefa.statusTarefa}} </td>
+          </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+            <td mat-cell *matCellDef="let morotirsta">
+              <section class="example-section">
+                <mat-checkbox style="border: 1px solid; " class="example-margin" [disabled]="false"
+                              [value]="morotirsta" (change)="onCheckboxChange($event)"></mat-checkbox>
+              </section>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </form>
+  <div>
+    <button mat-raised-button (click)="submitForm()"> Cadastrar</button>
+  </div>
+</div>
+
+
+
+

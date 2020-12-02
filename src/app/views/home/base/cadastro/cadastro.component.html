@@ -1,0 +1,67 @@
+<form class="example-form" [formGroup]="base">
+  <mat-form-field class="example-full-width">
+    <mat-label class="labelCadastro">Nome Base</mat-label>
+    <input placeholder="nome" matInput name="nomeDeBase" id="nomeBase"
+           [ngClass]="{'is-invalid': submitted && hasError('nomeBase')}" formControlName="nomeBase">
+  </mat-form-field>
+
+  <td>
+    <mat-form-field class="example-full-width">
+      <mat-label class="labelCadastro">Código Base</mat-label>
+      <input matInput type="number" maxlength="15" ame="long" placeholder="codBase" id="codBase"
+             [ngClass]="{'is-invalid': submitted && hasError('codBase')}" formControlName="codBase">
+    </mat-form-field>
+  </td>
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width form-group">
+          <mat-label class="labelCadastro">CEP</mat-label>
+          <input  matInput (keyup)="verifyCep()" type="text" maxlength="8"   placeholder="xxxxxxxxxx" id="cep "formControlName="cep">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">UF</mat-label>
+          <input matInput name="estadao" placeholder="Estado" id="uf"
+                 [ngClass]="{'is-invalid': submitted && hasError('uf')}" formControlName="uf" readonly>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Cidade</mat-label>
+          <input matInput name="city" placeholder="Cidade" id="cidade"
+                 [ngClass]="{'is-invalid': submitted && hasError('cidade')}" formControlName="cidade" readonly>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Latitude</mat-label>
+          <input matInput name="lat" placeholder="latitude" id="latitude"
+                 [ngClass]="{'is-invalid': submitted && hasError('latitude')}" formControlName="latitude" readonly>
+        </mat-form-field>
+      </td>
+
+
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Longitude</mat-label>
+          <input matInput name="long" placeholder="longitude" id="longitude"
+                 [ngClass]="{'is-invalid': submitted && hasError('longitude')}" formControlName="longitude" readonly>
+        </mat-form-field>
+      </td>
+
+    </tr>
+  </table>
+
+  <section>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="cadastrar()"> Cadastrar</button>
+    </div>
+  </section>
+</form>

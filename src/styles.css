@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-tab-label, .mat-tab-link {
+  color: black;
+}
+
+.msg-sucess {
+  background: #28a745;
+}
+
+
+.msg-error {
+  background: #e35e6b;
+}
+
+.mat-select-value {
+  color: #212121 ;
+}
+.mat-form-field-infix {
+  padding: .5em 0;
+  border-bottom: 2px solid #212121;
+}
+.mat-form-field-type-select {
+  border: 1px solid black;
+  color: #212121;
+}
+
+
+.mat-form-field-hide-placeholder .mat-select-placeholder {
+  color: transparent;
+  -webkit-text-fill-color: #212121 !important;
+  transition: none;
+  display: block;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 32px;
+}
+
+
+
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #212121;
+}
+
+
+
+.mat-form-field-hide-placeholder .mat-select-placeholder {
+  color: transparent;
+  -webkit-text-fill-color: #212121;
+  transition: none;
+  display: block;
+}
+
+.mat-label {
+  color: black;
+}
+
+::placeholder { 
+  color: black;
+  opacity: 1; 
+}
+
+mat-option {
+  color: white !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #000 !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #000 !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: #000 !important;;
+}
+
+.material-icons.tamIcon {
+  cursor: pointer;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+  color: black;
+}
+
+::ng-deep.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: black;
+}
+
+
+

@@ -1,0 +1,222 @@
+<form class="example-form" [formGroup]="tarefa">
+  <div class="example-container">
+    <br><br>
+    <table class="example-full-width" cellspacing="2" formGroupName="remetente">
+    <mat-label class="labelCadastro"style="font-size: 25px ">REMETENTE</mat-label>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro" >Nome</mat-label>
+            <input formControlName="nomeRemetente" matInput #input placeholder="Fulano(a) da Silva">
+            <mat-hint align="center">Digite o nome (Remetente)</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">CPF</mat-label>
+            <input formControlName="cpfCnpj" matInput mask="000.000.000-00" placeholder="Ex: 469.622.488-06">
+            <mat-hint align="center">Digite o CPF (Remetente)</mat-hint>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">CEP</mat-label>
+            <input formControlName="cep" matInput mask="99999-999" matInput (keyup)="verifyCep('R')" type="text"
+                   maxlength="8" maxlength="10"
+                   placeholder="xxxxx-xxx">
+            <mat-hint align="center">Digite o CEP (Remetente)</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Estado</mat-label>
+            <input formControlName="estado" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Endereço</mat-label>
+            <input formControlName="endereco" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Bairro</mat-label>
+            <input formControlName="bairro" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Numero</mat-label>
+            <input formControlName="numero" matInput #input maxlength="10" placeholder="Número">
+            <mat-hint align="center">Digite o Numero da local</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Latitude</mat-label>
+            <input formControlName="latitude" mask="000.000.000-00" matInput name="cpf" id="cpf" readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Longitude</mat-label>
+            <input formControlName="longitude" mask="000.000.000-00" placeholder="cpf" matInput name="cpf" id="cpf"
+                   readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Observação</mat-label>
+            <textarea formControlName="observacao" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                      cdkAutosizeMaxRows="5"></textarea>
+            <mat-hint align="center">Adicione uma observação</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <br><br>
+    <table class="example-full-width" cellspacing="2" formGroupName="destinatario">
+      <mat-label class="labelCadastro"style="font-size: 25px ">DESTINATÁRIO</mat-label>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Nome</mat-label>
+            <input formControlName="nomeDestinatario" matInput #input placeholder="Número">
+            <mat-hint align="center">Digite o nome (Destinatário)</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">CPF</mat-label>
+            <input formControlName="cpfCnpj" mask="000.000.000-00" placeholder="Ex: 469.622.488-06" matInput name="cpf"
+                   id="cpf">
+            <mat-hint align="center">Digite o CPF (Destinatário)</mat-hint>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">CEP</mat-label>
+            <input formControlName="cep" matInput mask="99999-999" matInput (keyup)="verifyCep('D')" type="text"
+                   maxlength="8" maxlength="10"
+                   placeholder="xxxxx-xxx">
+            <mat-hint align="center">Digite o CEP (Destinatário)</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Estado</mat-label>
+            <input formControlName="estado" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Endereço</mat-label>
+            <input formControlName="endereco" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Bairro</mat-label>
+            <input formControlName="bairro" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Numero</mat-label>
+            <input formControlName="numero" matInput #input maxlength="10" placeholder="Fulano(a) da Silva">
+            <mat-hint align="center">Digite o Numero do local</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Latitude</mat-label>
+            <input formControlName="latitude" mask="000.000.000-00" placeholder="cpf" matInput name="cpf" id="cpf"
+                   readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Longitude</mat-label>
+            <input formControlName="longitude" mask="000.000.000-00" placeholder="cpf" matInput name="cpf" id="cpf"
+                   readonly>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Observação</mat-label>
+            <textarea formControlName="observacao" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                      cdkAutosizeMaxRows="5"></textarea>
+            <mat-hint align="center">Adicione uma observação</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <!--    <table class="example-full-width" cellspacing="2" formGroupName="motorista">-->
+    <!--      <p>MOTORISTA</p>-->
+    <!--      <tr>-->
+    <!--        <td>-->
+    <!--          <mat-form-field>-->
+    <!--            <mat-label>Motorista</mat-label>-->
+    <!--            <mat-select placeholder="Motorista" formControlName="nome">-->
+    <!--              <mat-option *ngFor="let motorista of motoristas" [value]="motorista.nomeView">-->
+    <!--                {{motorista.nome}}-->
+    <!--              </mat-option>-->
+    <!--            </mat-select>-->
+    <!--            <mat-error>Preencha o campo-->
+    <!--              bases-->
+    <!--            </mat-error>-->
+    <!--          </mat-form-field>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--          <mat-form-field>-->
+    <!--            <mat-label class="labelCadastro">CPF</mat-label>-->
+    <!--            <input formControlName="cpf" mask="000.000.000-00" placeholder="cpf" matInput name="cpf" id="cpf" readonly>-->
+    <!--          </mat-form-field>-->
+    <!--        </td>-->
+    <!--        <td>-->
+    <!--          <mat-form-field>-->
+    <!--            <mat-label class="labelCadastro">Celular</mat-label>-->
+    <!--            <input formControlName="celular" matInput #input maxlength="10" placeholder="xxxxx-xxx" readonly>-->
+    <!--          </mat-form-field>-->
+    <!--        </td>-->
+    <!--      </tr>-->
+    <!--    </table>-->
+    <br><br>
+    <table class="example-full-width" cellspacing="2" formGroupName="carga">
+      <mat-label class="labelCadastro"style="font-size: 25px ">Carga</mat-label>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Nota Fiscal</mat-label>
+            <input formControlName="notaFiscal" mask="000.000.000-00" placeholder="cpf" matInput name="cpf" id="cpf"placeholder="Ex: 12345">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">volume de Carga</mat-label>
+            <input formControlName="volumeCarga" matInput #input maxlength="10" placeholder="Ex: 10">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label class="labelCadastro">Peso</mat-label>
+            <input formControlName="peso" matInput #input maxlength="10" placeholder="Ex: 3000">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button (click)="submit()"> Cadastrar</button>
+  </div>
+</form>

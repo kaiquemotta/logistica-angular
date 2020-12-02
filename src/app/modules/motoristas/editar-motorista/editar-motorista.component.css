@@ -1,0 +1,9 @@
+.k{
+    transform-origin: 50% 20.5px 0px;
+    font-size: 14px;
+    opacity: 1;
+    min-width: calc(100% + 32px);
+    transform: scaleY(1);
+    width: 189px;
+    height: 35px;
+}

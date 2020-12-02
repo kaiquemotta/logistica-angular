@@ -1,0 +1,70 @@
+<h2>Editar Veículo</h2>
+<!--<p>Valor do retorno da API: {{ dataForView }}</p> -->
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label for="idVeiculo">ID:</label><br>
+    <input type="number" formControlName="idVeiculo" readonly>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="cidade">Cidade:</label>
+    <input type="text" formControlName="cidade">
+  </div>
+
+  <br>
+
+
+  <div class="form-group">
+    <mat-form-field appearence="fill">
+      <mat-label for="uf">Estado:</mat-label>
+      <mat-select placeholder="UF" formControlName="uf">
+        <mat-option *ngFor="let estado of estados" [value]="estado.uf" class="k">
+          {{estado.uf}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        de Estados
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <div class="form-group">
+    <label for="placa">Placa:</label>
+    <input disabled type="text" mask="AAA-9999" formControlName="placa">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+     <mat-form-field appearence="fill">
+      <mat-label for="tipoVeiculo">Tipo Veículo:</mat-label>
+      <mat-select placeholder="Tipo do Veiculo" formControlName="tipoVeiculo">
+        <mat-option *ngFor="let tipo of tipos" [value]="tipo.tipoVeiculo" class="k">
+          {{tipo.tipoVeiculo}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        do Tipo do Veículo
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field appearence="fill">
+      <mat-label for="corVeiculo">Tipo Veículo:</mat-label>
+      <mat-select placeholder="Cor do Veiculo" formControlName="corVeiculo">
+        <mat-option *ngFor="let cor of cores" [value]="cor.corVeiculo" class="k">
+          {{cor.corVeiculo}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        da cor do Veículo
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button style="margin-top: 1rem;" (click)=submitForm()>Salvar Edição</button>
+</form>

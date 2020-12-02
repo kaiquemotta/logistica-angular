@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <mat-toolbar-row style="font-size: 1.5rem ; height: 80px">
+      <span>Logistics Control  <mat-icon>emoji_transportation</mat-icon></span>
+      <button mat-button routerLink="">Base</button>
+      <button mat-button routerLink = "/motoristas">Motoristas</button>
+      <button mat-button routerLink = "/veiculos">Veiculos</button>
+      <button mat-button routerLink = "/tarefas">Tarefa</button>
+      <button mat-button routerLink = "/viagem">Viagem</button>
+      <!--    <button mat-button [matMenuTriggerFor]="motorista">Motorista</button>-->
+  <!--    <mat-menu #motorista="matMenu">-->
+  <!--      <button mat-menu-item>Cadastrar</button>-->
+  <!--      <button mat-menu-item>Listar</button>-->
+  <!--    </mat-menu>-->
+      <span class="example-spacer"></span>
+      <button mat-raised-button><mat-icon>coronavirus</mat-icon></button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<router-outlet>
+
+</router-outlet>

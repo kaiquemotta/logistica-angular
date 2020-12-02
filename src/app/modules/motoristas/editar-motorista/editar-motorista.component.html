@@ -1,0 +1,72 @@
+<h2>Editar Motorista</h2>
+<!--<p>Valor do retorno da API: {{ dataForView }}</p> -->
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label for="id">Identificação do Motorista:</label><br>
+    <input type="number" formControlName="id" readonly>
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input type="text" formControlName="nome">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="cpf">CPF:</label>
+    <input disabled type="text" mask="999.999.999-99" formControlName="cpf">
+  </div>
+  
+  <br>
+
+  <div class="form-group">
+    <mat-form-field appearence="fill">
+      <mat-label for="categoriaCnh">Categoria do CNH:</mat-label>
+      <mat-select placeholder="CNH" formControlName="categoriaCnh">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.categoriaCnh" class="k">
+          {{categoria.categoriaCnh}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        de Estados
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input disabled type="date" formControlName="dataNascimento">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <label for="celular">Celular:</label>
+    <input type="text" mask="(99)9999-9999" formControlName="celular">
+  </div>
+
+  <br>
+
+  <!-- <div class="form-group">
+    <mat-form-field appearence="fill" formGroup="base">
+      <mat-label for="id">Base:</mat-label>
+      <mat-select placeholder="Base" formControlName="id">
+        <mat-option *ngFor="let base of bases" [value]="base.id" class="k">
+          {{bases.nome}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        Base
+      </mat-error>
+    </mat-form-field>
+  </div> -->
+
+  <br>
+
+  <button mat-raised-button style="margin-top: 1rem;" (click)=submitForm()>Salvar Edição</button>
+</form>

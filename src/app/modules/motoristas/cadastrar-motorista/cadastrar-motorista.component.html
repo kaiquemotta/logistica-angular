@@ -1,0 +1,72 @@
+<form class="example-form" [formGroup]="motorista">
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Nome</mat-label>
+          <input placeholder="ex: Julio ..." matInput name="nome" id="nome"
+                 [ngClass]="{'is-invalid': submitted && hasError('nome')}" formControlName="nome">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">CPF</mat-label>
+          <input mask="000.000.000-00" placeholder="ex: 000.000.000-00" matInput name="cpf" id="cpf"
+                 [ngClass]="{'is-invalid': submitted && hasError('cpf')}" formControlName="cpf">
+        </mat-form-field>
+        <!--        mask="000.000.000-00||00.000.000/0000-00"-->
+      </td>
+      <td>
+        <mat-form-field appearance="outline" >
+          <mat-label>Categoria da CNH</mat-label>
+          <mat-select placeholder="Categorias" formControlName="categoriaCnh">
+            <mat-option *ngFor="let base of categorias" [value]="base.nomeCat" >
+              {{base.nomeCat}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Preencha o campo
+            bases
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Data de Nascimento</mat-label>
+          <input type="date" placeholder="ex: 05/11/1879" matInput name="dataNascimento" id="dataNascimento"
+                 [ngClass]="{'is-invalid': submitted && hasError('dataNascimento')}" formControlName="dataNascimento">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Celular</mat-label>
+          <input mask="(00) 0000-00009"
+                 placeholder="celular" matInput name="celular" id="celular"
+                 [ngClass]="{'is-invalid': submitted && hasError('celular')}" formControlName="celular">
+        </mat-form-field>
+      </td>
+      <mat-form-field appearance="outline" formGroupName="base">
+        <mat-label>Base</mat-label>
+        <!--salva o valor de value em ngModel-->
+        <mat-select placeholder="Bases" formControlName="id">>
+          <mat-option *ngFor="let base of bases" [value]="base.id">
+            {{base.nomeBase}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Preencha o campo
+          bases
+        </mat-error>
+      </mat-form-field>
+    </tr>
+  </table>
+  <section>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="cadastrar()"> Cadastrar</button>
+    </div>
+  </section>
+</form>
+

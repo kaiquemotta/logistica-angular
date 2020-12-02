@@ -1,0 +1,90 @@
+<form class="example-form" [formGroup]="formGroup">
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label class="labelCadastro">Cidade</mat-label>
+      <input placeholder="cidade" matInput name="cidade" id="cidade"
+             [ngClass]="{'is-invalid': submitted && hasError('cidade')}" formControlName="cidade" required>
+    </mat-form-field>
+  </div>
+  <td>
+    <mat-form-field>
+      <mat-label>UF</mat-label>
+      <!--salva o valor de value em ngModel-->
+      <mat-select placeholder="Estado" formControlName="uf">
+        <mat-option *ngFor="let estado of estados" [value]="estado.uf">
+          {{estado.uf}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        que determina o estado
+      </mat-error>
+    </mat-form-field>
+  </td>
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label class="labelCadastro">Placa</mat-label>
+          <input mask="AAA-9999" matInput name="placa" placeholder="placa" id="placa"
+                 [ngClass]="{'is-invalid': submitted && hasError('placa')}" formControlName="placa"
+                 oninput="this.value = this.value.toUpperCase()" required>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="example-full-width" cellspacing="2">
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-label>Tipo de Veículo</mat-label>
+          <!--salva o valor de value em ngModel-->
+          <mat-select placeholder="Tipo do Veiculo" formControlName="tipoVeiculo">
+            <mat-option *ngFor="let veiculo of tipos" [value]="veiculo.tipo">
+              {{veiculo.tipo}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Preencha o campo
+            que determina o tipo do veículo
+          </mat-error>
+        </mat-form-field>
+      </td>
+      <br><br>
+      <td>
+        <mat-form-field appearance="outline" class="baseColor ajustando">
+          <mat-label>Cor do Veículo</mat-label>
+          <!--salva o valor de value em ngModel-->
+          <mat-select placeholder="Cor" formControlName="corVeiculo" required>
+            <mat-option *ngFor="let veiculo of cores" [value]="veiculo.corVeiculo">
+              {{veiculo.corVeiculo}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Preencha o campo
+            que determina a cor do veículo
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <br><br>
+  <td class="baseColor">
+    <mat-form-field appearance="outline" formGroupName="base" class="ajustando">
+      <mat-label>Base</mat-label>
+      <!--salva o valor de value em ngModel-->
+      <mat-select placeholder="Bases" formControlName="id" required>
+        <mat-option *ngFor="let base of bases" [value]="base.id">
+          {{base.nomeBase}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Preencha o campo
+        bases
+      </mat-error>
+    </mat-form-field>
+  </td>
+  <br> <br>
+  <section>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="cadastrar()"> Cadastrar</button>
+    </div>
+  </section>
+</form>
